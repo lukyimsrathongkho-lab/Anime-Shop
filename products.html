@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>สินค้า | Figure & Poster Shop</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/data.js"></script>
+	<script src="js/common.js"></script>
+	<script src="js/products.js"></script>
+	<script src="js/auth.js"></script>
+
+
+</head>
+<body>
+
+<table>
+
+<!-- HEADER -->
+<tr>
+    <td colspan="2" class="header">
+        <h1>สินค้า</h1>
+        <p>รวมฟิกเกอร์ โปสเตอร์ และหนังสือ สำหรับนักสะสม</p>
+    </td>
+</tr>
+
+<tr>
+
+<!-- LEFT MENU -->
+<td class="menu">
+    <h3>เมนูหลัก</h3>
+    <ul>
+        <li><a href="index.html">หน้าแรก</a></li>
+        <li><a href="products.html">สินค้า</a></li>
+        <li><a href="shopping_cart.html">ตะกร้าสินค้า</a></li>
+        <li><a href="order_history.html">ประวัติการสั่งซื้อ</a></li>
+        <li><a href="contact_us.html">ติดต่อเรา</a></li>
+		<li id="userMenu">
+    <a href="login.html">เข้าสู่ระบบ</a>
+</li>
+    </ul>
+</td>
+
+<!-- CONTENT -->
+<td class="content">
+
+    <!-- FILTER PANEL -->
+    <div class="box filter-panel">
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="🔍 ค้นหาชื่อสินค้า..."
+        >
+
+        <div class="filter-row">
+            <select id="mainCategory">
+                <option value="all">หมวดหลักทั้งหมด</option>
+                <option value="figure">ฟิกเกอร์</option>
+                <option value="poster">โปสเตอร์</option>
+                <option value="book">หนังสือ</option>
+            </select>
+
+            <select id="subCategory">
+                <option value="all">หมวดย่อยทั้งหมด</option>
+                <option value="anime">อนิเมะ</option>
+                <option value="game">เกม</option>
+                <option value="movie">ภาพยนตร์</option>
+            </select>
+
+            <select id="seriesSelect">
+                <option value="all">ทุกเรื่อง</option>
+            </select>
+
+            <button onclick="applyFilter()">กรองสินค้า</button>
+            <button onclick="resetFilter()" class="btn-clear">ล้างตัวกรอง</button>
+        </div>
+    </div>
+
+    <!-- PRODUCT LIST -->
+    <div class="product-grid" id="productGrid"></div>
+
+</td>
+</tr>
+
+<!-- FOOTER -->
+<tr>
+    <td colspan="2" class="footer">
+        © 2026 Figure & Poster Shop
+    </td>
+</tr>
+
+</table>
+
+</body>
+</html>

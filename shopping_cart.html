@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>ตะกร้าสินค้า</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/data.js"></script>
+	<script src="js/cart.js"></script>
+	<script src="js/common.js"></script>
+	<script src="js/auth.js"></script>
+
+
+</head>
+<body>
+
+<table>
+
+<tr>
+    <td colspan="2" class="header">
+        <h1>🛒 ตะกร้าสินค้า</h1>
+        <p>ตรวจสอบรายการสินค้าก่อนชำระเงิน</p>
+    </td>
+</tr>
+
+<tr>
+
+<!-- LEFT MENU -->
+<td class="menu">
+    <h3>เมนูหลัก</h3>
+    <ul>
+        <li><a href="index.html">หน้าแรก</a></li>
+        <li><a href="products.html">สินค้า</a></li>
+        <li><a href="shopping_cart.html">ตะกร้าสินค้า</a></li>
+        <li><a href="order_history.html">ประวัติการสั่งซื้อ</a></li>
+        <li><a href="contact_us.html">ติดต่อเรา</a></li>
+		<li id="userMenu">
+    <a href="login.html">เข้าสู่ระบบ</a>
+</li>
+    </ul>
+</td>
+
+<!-- CONTENT -->
+<td class="content">
+
+    <div class="box">
+        <table class="cart-table" width="100%">
+            <thead>
+                <tr>
+                    <th>สินค้า</th>
+                    <th>ราคา</th>
+                    <th>จำนวน</th>
+                    <th>รวม</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="cartItems"></tbody>
+        </table>
+    </div>
+
+    <div class="box cart-summary">
+        <h2>สรุปราคา</h2>
+        <p>ราคารวมทั้งหมด: <span id="cartTotal">0</span> บาท</p>
+        <button class="btn-buy" onclick="checkout()">💳 ดำเนินการชำระเงิน</button>
+    </div>
+
+</td>
+</tr>
+
+<tr>
+    <td colspan="2" class="footer">
+        © 2026 Figure & Poster Shop
+    </td>
+</tr>
+
+</table>
+
+</body>
+</html>

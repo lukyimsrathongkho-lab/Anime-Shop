@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>ชำระเงิน</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/data.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/checkout.js" defer></script>
+	<script src="js/auth.js"></script>
+
+</head>
+<body>
+
+<table>
+
+<tr>
+    <td colspan="2" class="header">
+        <h1>💳 ชำระเงิน</h1>
+        <p>กรุณาตรวจสอบข้อมูลก่อนยืนยันคำสั่งซื้อ</p>
+    </td>
+</tr>
+
+<tr>
+
+<!-- LEFT MENU -->
+<td class="menu">
+    <h3>เมนูหลัก</h3>
+    <ul>
+        <li><a href="index.html">หน้าแรก</a></li>
+        <li><a href="products.html">สินค้า</a></li>
+        <li><a href="shopping_cart.html">ตะกร้าสินค้า</a></li>
+        <li><a href="order_history.html">ประวัติการสั่งซื้อ</a></li>
+        <li><a href="contact_us.html">ติดต่อเรา</a></li>
+		<li id="userMenu">
+    <a href="login.html">เข้าสู่ระบบ</a>
+</li>
+    </ul>
+</td>
+<!-- CONTENT -->
+<td class="content">
+
+    <!-- ORDER SUMMARY -->
+    <div class="box">
+        <h2>🧺 สรุปรายการสินค้า</h2>
+        <table class="cart-table" width="100%">
+            <thead>
+                <tr>
+                    <th>สินค้า</th>
+                    <th>จำนวน</th>
+                    <th>ราคา</th>
+                </tr>
+            </thead>
+            <tbody id="checkoutItems"></tbody>
+        </table>
+        <p class="total">ยอดรวมทั้งหมด: <span id="checkoutTotal">0</span> บาท</p>
+    </div>
+
+    <!-- CUSTOMER INFO -->
+    <div class="box">
+        <h2>📦 ข้อมูลผู้สั่งซื้อ</h2>
+
+        <label>ชื่อ - นามสกุล</label>
+        <input type="text" id="custName" placeholder="กรอกชื่อผู้รับ">
+
+        <label>ที่อยู่จัดส่ง</label>
+        <textarea id="custAddress" rows="3" placeholder="ที่อยู่สำหรับจัดส่ง"></textarea>
+
+        <label>เบอร์โทรศัพท์</label>
+        <input type="tel" id="custPhone" placeholder="08xxxxxxxx">
+
+        <<h2>💳 วิธีการชำระเงิน</h2>
+
+<div class="payment-options">
+    <label class="pay-card">
+        <input type="radio" name="payment" value="qr">
+        <span>📱 QR พร้อมเพย์</span>
+    </label>
+
+    <label class="pay-card">
+        <input type="radio" name="payment" value="card">
+        <span>💳 บัตรเครดิต / เดบิต</span>
+    </label>
+
+    <label class="pay-card">
+        <input type="radio" name="payment" value="cod">
+        <span>📦 เก็บเงินปลายทาง</span>
+    </label>
+</div>
+
+<button class="btn-buy" onclick="confirmOrder()">✅ ยืนยันการสั่งซื้อ</button>
+
+
+</td>
+</tr>
+
+<tr>
+    <td colspan="2" class="footer">
+        © 2026 Figure & Poster Shop
+    </td>
+</tr>
+
+</table>
+	
+<!-- QR MODAL -->
+<div id="qrModal" class="modal">
+    <div class="modal-content">
+        <h2>📱 สแกน QR เพื่อชำระเงิน</h2>
+
+        <img src="images/qr.png" class="qr-img">
+
+        <div class="qr-actions">
+            <button class="btn-buy" onclick="verifyPayment()">ตรวจสอบการโอนเงิน</button>
+            <button class="btn-cart" onclick="closeQR()">ยกเลิก</button>
+        </div>
+
+        <p id="qrStatus"></p>
+    </div>
+</div>
+
+
+</body>
+</html>

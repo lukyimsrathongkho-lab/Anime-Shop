@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>รายละเอียดสินค้า</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/data.js"></script>
+	<script src="js/common.js"></script>
+	<script src="js/product_detail.js"></script>
+	<script src="js/auth.js"></script>
+
+
+</head>
+<body>
+
+<table>
+
+<tr>
+    <td colspan="2" class="header">
+        <h1 id="productName"></h1>
+    </td>
+</tr>
+
+<tr>
+	
+<td class="menu">
+    <h3>เมนูหลัก</h3>
+    <ul>
+        <li><a href="index.html">หน้าแรก</a></li>
+        <li><a href="products.html">สินค้า</a></li>
+        <li><a href="shopping_cart.html">ตะกร้าสินค้า</a></li>
+        <li><a href="order_history.html">ประวัติการสั่งซื้อ</a></li>
+        <li><a href="contact_us.html">ติดต่อเรา</a></li>
+		<li id="userMenu">
+    <a href="login.html">เข้าสู่ระบบ</a>
+</li>
+    </ul>
+</td>
+
+
+<!-- CONTENT -->
+<td class="content">
+	
+	<!-- IMAGE ALBUM -->
+<div class="box image-album">
+
+    <div class="album-grid" id="albumPreview"></div>
+
+</div>
+
+<!-- MODAL : GALLERY -->
+<div id="galleryModal" class="modal">
+    <span class="close" onclick="closeGallery()">×</span>
+    <img id="zoomImage" class="zoom-img">
+    <div class="gallery-thumbs" id="galleryImages"></div>
+</div>
+
+
+
+    <div class="box">
+        <h2 id="productTitle"></h2>
+        <p id="productDesc"></p>
+        <p class="price" id="productPrice"></p>
+
+        <div class="action-buttons">
+    <button class="btn-cart" onclick="addToCart()">🛒 เพิ่มลงตะกร้า</button>
+    <button class="btn-buy" onclick="buyNow()">💳 ซื้อเลย</button>
+</div>
+
+
+    <div class="box">
+        <h2>คะแนนสินค้า</h2>
+        <div id="ratingStars"></div>
+        <p id="ratingValue"></p>
+    </div>
+
+    <div class="box">
+        <h2>รีวิวจากลูกค้า</h2>
+        <div id="reviewList"></div>
+    </div>
+
+</td>
+</tr>
+
+<tr>
+    <td colspan="2" class="footer">
+        © 2026 Figure & Poster Shop
+    </td>
+</tr>
+
+</table>
+
+	
+<!-- IMAGE VIEWER MODAL -->
+<div id="imageViewer" class="image-viewer" onclick="closeViewer(event)">
+    <span class="nav prev" onclick="prevImage(event)">❮</span>
+
+    <img id="viewerImg" onclick="toggleZoom(event)">
+
+    <span class="nav next" onclick="nextImage(event)">❯</span>
+</div>
+
+	
+</body>
+</html>

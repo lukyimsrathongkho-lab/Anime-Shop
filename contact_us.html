@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>ติดต่อเรา</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- ใช้ toast จาก common.js -->
+    <script src="js/common.js"></script>
+    <script src="js/contact.js" defer></script>
+	<script src="js/auth.js"></script>
+
+</head>
+<body>
+
+<table>
+
+<tr>
+    <td colspan="2" class="header">
+        <h1>📞 ติดต่อเรา</h1>
+        <p>หากมีคำถามหรือข้อเสนอแนะ สามารถติดต่อเราได้ที่นี่</p>
+    </td>
+</tr>
+
+<tr>
+
+<!-- MENU -->
+<td class="menu">
+    <h3>เมนูหลัก</h3>
+    <ul>
+        <li><a href="index.html">หน้าแรก</a></li>
+        <li><a href="products.html">สินค้า</a></li>
+        <li><a href="shopping_cart.html">ตะกร้าสินค้า</a></li>
+        <li><a href="order_history.html">ประวัติการสั่งซื้อ</a></li>
+        <li><a href="contact_us.html">ติดต่อเรา</a></li>
+		<li id="userMenu">
+    <a href="login.html">เข้าสู่ระบบ</a>
+</li>
+    </ul>
+</td>
+
+<!-- CONTENT -->
+<td class="content">
+	
+	<div class="box">
+    <h2>✉ ติดต่อเรา</h2>
+
+    <label>ชื่อของคุณ</label>
+    <input type="text" id="contactName" placeholder="ชื่อ - นามสกุล">
+
+    <label>อีเมล</label>
+    <input type="email" id="contactEmail" placeholder="example@email.com">
+
+    <label>หัวข้อ</label>
+    <input type="text" id="contactSubject" placeholder="หัวข้อที่ต้องการติดต่อ">
+
+    <label>ข้อความ</label>
+    <textarea id="contactMessage" rows="4"
+        placeholder="พิมพ์ข้อความของคุณที่นี่"></textarea>
+
+    <button class="btn-buy" onclick="sendMessage()">📨 ส่งข้อความ</button>
+</div>
+
+
+    <div class="box contact-info">
+    <h2>📍 ช่องทางการติดต่อ</h2>
+
+    <div class="contact-item">
+        <img src="images/icon-location.png" alt="location">
+        <div>
+            <p class="title">ที่อยู่ร้าน</p>
+            <p>Figure & Poster Shop<br>กรุงเทพฯ ประเทศไทย</p>
+        </div>
+    </div>
+
+    <div class="contact-item">
+        <img src="images/icon-phone.png" alt="phone">
+        <div>
+            <p class="title">โทรศัพท์</p>
+            <p>08x-xxx-xxxx</p>
+        </div>
+    </div>
+
+    <div class="contact-item">
+        <img src="images/icon-email.png" alt="email">
+        <div>
+            <p class="title">อีเมล</p>
+            <p>support@figureposter.com</p>
+        </div>
+    </div>
+		
+		<div class="box">
+    <h2>🗺️ แผนที่ร้าน</h2>
+
+    <div class="map-container">
+        <iframe
+            src="https://www.google.com/maps?q=Bangkok&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+</div>
+
+
+    <hr class="contact-line">
+
+    <div class="social-grid">
+    <div class="social-card" onclick="openSocialModal()">
+        <img src="images/line.png">
+        <span>LINE</span>
+    </div>
+
+    <div class="social-card" onclick="openSocialModal()">
+        <img src="images/facebook.png">
+        <span>Facebook</span>
+    </div>
+
+    <div class="social-card" onclick="openSocialModal()">
+        <img src="images/instagram.png">
+        <span>Instagram</span>
+    </div>
+</div>
+
+
+
+</td>
+</tr>
+
+<tr>
+    <td colspan="2" class="footer">
+        © 2026 Figure & Poster Shop
+    </td>
+</tr>
+
+</table>
+
+	
+	<!-- SOCIAL MODAL -->
+<div id="socialModal" class="modal">
+    <div class="modal-content">
+        <h2>📢 แจ้งเตือน</h2>
+
+        <img src="images/no-data.gif" class="no-data-img">
+
+        <p>ไม่มีข้อมูลเด้อ</p>
+
+        <button class="btn-cart" onclick="closeSocialModal()">ปิด</button>
+    </div>
+</div>
+
+	
+</body>
+</html>

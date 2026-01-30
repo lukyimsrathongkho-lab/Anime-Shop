@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>เข้าสู่ระบบ</title>
+    <link rel="stylesheet" href="css/style.css">
+	<script src="js/common.js"></script>
+    <script src="js/auth.js" defer></script>
+</head>
+<body>
+
+<table>
+<tr>
+    <td colspan="2" class="header">
+        <h1>🔐 เข้าสู่ระบบ</h1>
+    </td>
+</tr>
+
+<tr>
+<td class="menu">
+    <ul>
+        <li><a href="index.html">หน้าแรก</a></li>
+        <li><a href="register.html">สมัครสมาชิก</a></li>
+    </ul>
+</td>
+
+<td class="content">
+<div class="box">
+    <label>อีเมล</label>
+    <input type="email" id="loginEmail">
+
+    <label>รหัสผ่าน</label>
+    <input type="password" id="loginPassword">
+
+    <button class="btn-buy" onclick="login()">เข้าสู่ระบบ</button>
+</div>
+</td>
+</tr>
+</table>
+
+</body>
+</html>
